@@ -4,6 +4,11 @@ Pydero is a small python library for interacting with smart contracts on the DER
 
 # usage
 
+First import the relevant classes
+```
+from pydero import Contract, Connection
+```
+
 Instantiate a python Contract object by the command 
 
 ```
