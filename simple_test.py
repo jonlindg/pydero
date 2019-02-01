@@ -1,6 +1,9 @@
 #import the relevant classes from pydero
 from pydero import Contract,Connection
 
+#see the smart contract source code simple_test.bas or on the dero stargate explorer:
+#http://pool.dero.io:8080/tx/2849f5c32d385b8b972e53dde0abd5b6458f8eb9367f1215e7e95b819f739592
+
 #specify the scid
 scid='2849f5c32d385b8b972e53dde0abd5b6458f8eb9367f1215e7e95b819f739592'
 
@@ -13,6 +16,7 @@ abi = {"Print":{},"ChangeValue":{"new_val":"Uint64"}}
 #create an instance of the Contract class
 contract = Contract(abi,connection=conn,scid=scid)
 
+#obtain the value of the stored variable 'number'
 resp = contract.get_attribute('number')
 print(resp)
 #now you can call functions on the contract
