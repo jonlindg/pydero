@@ -1,3 +1,12 @@
+#-----------------------------------------
+#-----Use at your own risk, the author----
+#-----takes no responsibility in ---------
+#-----case of loss of funds---------------
+#-----------------------------------------
+#-----------------------------------------
+#----Distributed under the MIT License----
+
+
 import json
 import requests
 
