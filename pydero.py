@@ -1,3 +1,4 @@
+#-----Discord: @Kurret--------------------
 #-----------------------------------------
 #-----Use at your own risk, the author----
 #-----takes no responsibility in ---------
