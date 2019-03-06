@@ -114,6 +114,16 @@ class Connection:
             raise Exception("No access point provided for daemon rpc")
         return requests.post(self.access_point_daemon+mode,headers=self.headers,data=data)
 
+    def get_balance(self):
+        response = requests.post(self.access_point_wallet+'/json_rpc',headers=self.headers,json={'jsonrpc':'2.0','id':'0','method':'getbalance'})
+        return response.json()['result']
+
+    def get_address(self):
+        response = requests.post(self.access_point_wallet+'/json_rpc',headers=self.headers,json={'jsonrpc':'2.0','id':'0','method':'getaddress'})
+        return response.json()['result']
+
+
+
 
 class Contract:
     """A class representing a smart contract on the DERO block-dag. __init__ takes three arguments:
@@ -148,5 +158,9 @@ class Contract:
             raise Exception("Failed retrieving value for variable "+variable)
 
 
+if __name__=='__main__':
+    connection = Connection()
+    print(connection.get_balance())
+    print(connection.get_address())
     
 
