@@ -1,4 +1,6 @@
 dist/
 build/
 pydero_jonlindg.egg-info/
+pydero.egg-info/
 pydero_.py
+.gitignore
