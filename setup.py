@@ -4,8 +4,8 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="pydero-jonlindg",
-    version="1.0.1",
+    name="pydero",
+    version="1.0.0",
     author="Jonathan Lindgren",
     author_email="ejonathanlindgren@gmail.com",
     description="Python wrapper for interacting with the DERO blockdag",

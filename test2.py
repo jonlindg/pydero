@@ -14,7 +14,7 @@ abi = {"ChangeValue":{"new_val1":"Uint64","new_val2":"Uint64"},"DepositAndChange
 
 #create an instance of the Contract class
 contract = Contract(abi=None,connection=conn,scid=scid)
-#contract.set_abi_from_db()
+contract.set_abi_from_db()
 #print(contract.get_abi())
 #print(conn.get_address())
 #print(conn.get_balance())
@@ -24,16 +24,17 @@ contract = Contract(abi=None,connection=conn,scid=scid)
 #print(conn.get_block_header_by_hash('101979b481e7a9664569983c71bb35a360c36bce9d62013225852b86e221a22b'))
 #print(conn.get_block_header_by_height(123))
 #print(contract.get_abi_from_db())
-#print(contract.get_variable(['number','string1','string2','number']))
+print(contract.get_variable(['number','string1','string2','number']))
 #print(contract.get())
 #print(conn.get_last_block_header())
-print(contract.get_balance())
+print(contract.get_balance(in_dero=True))
+print(contract.DepositAndChangeValue.args)
 #print(conn.get_balance())
 #print(contract.get_balance(in_dero=True))
 #print(contract.get_attribute('string1'))
 #print(contract.get_attribute('string2'))#'28d39e391578511ef1ba545c882ad248d7628ed24bb289732324ca8070b1ddb0'
 #print(conn.get_balance())
-
+#curl -X POST http://127.0.0.1:30309/json_rpc -H 'Content-Type: application/json' -d '{"jsonrpc":"2.0","id":"0","method":"transfer_split","params":{"mixin":5,"get_tx_key": true , "sc_tx":{"entrypoint":"DepositAndChangeValue","scid":"d1668fce0d0e9c3191b7b8d174ddde9269ffbfb6f0bf85b07b3747411c541454" , "params":{ "new_val1":1, "new_val2":5} } }}'
 
 #print(conn.transfer([(10,'dEToNsSBSisbRuwBwVjRG6j4GXRJXbHruPQZsiCoaYYcQeQp28KQiB4MpeyWC89sKr58JuqD6LQaYA1UhNk1GZfx8cqqC7pepJ')]).json())
 
@@ -41,7 +42,7 @@ print(contract.get_balance())
 #r=contract.ChangeValue(100,21)
 #r=contract.DepositAndChangeValueAndStrings(10,4)
 #print(r.json(),r.status_code,requests.codes.ok)
-#print(contract.DepositAndChangeValue(10,3100000000000,22))
+#print(contract.DepositAndChangeValue(1,from_dero(0),21,payable=True))
 #print(contract.DepositAndChangeValueAndStrings(10,30100000000000,20,"ASDF113","QWERTY213"))
 #print(contract.Withdraw(5,from_dero(3.0),8))
 

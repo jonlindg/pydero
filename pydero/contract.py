@@ -47,6 +47,7 @@ class _Function:
                     else:
                         raise Exception("For transferring dero in a function call, set payable=True")
                 payload['params']=params
+                print(payload)
 
                 response = self.contract.connection.rpc_wallet(payload)
                 return response.json()
